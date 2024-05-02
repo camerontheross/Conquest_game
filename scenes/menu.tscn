@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ucd7kvblvx51"]
 
 [ext_resource type="FontFile" uid="uid://b28sjas6vym6u" path="res://assets/fonts/zrnic rg.otf" id="1_2g5ey"]
-[ext_resource type="Script" path="res://scenes/menu.gd" id="1_5rk3c"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_5rk3c"]
 
 [sub_resource type="Theme" id="Theme_4uci1"]
 default_font = ExtResource("1_2g5ey")
