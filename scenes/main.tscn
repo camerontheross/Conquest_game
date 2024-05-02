@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://7l70iu1qixl"]
+
+[ext_resource type="PackedScene" uid="uid://dht668nqglvrp" path="res://scenes/player.tscn" id="1_trees"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0tdp"]
+size = Vector3(60, 1, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgqe0"]
+albedo_color = Color(0.0980392, 0.576471, 0.137255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_patpt"]
+material = SubResource("StandardMaterial3D_hgqe0")
+size = Vector3(60, 1, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kx2fx"]
+size = Vector3(10, 5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d7epx"]
+albedo_color = Color(0.184314, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k3m7k"]
+material = SubResource("StandardMaterial3D_d7epx")
+size = Vector3(10, 5, 10)
+
+[node name="Main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_trees")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.783655, -0.179001, 0.594848, 0.368626, 0.636756, 0.677242, -0.5, 0.75, -0.433013, -29.2086, 34.9517, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_p0tdp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_patpt")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87946, 0.991627, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_kx2fx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2/CollisionShape3D"]
+mesh = SubResource("BoxMesh_k3m7k")
