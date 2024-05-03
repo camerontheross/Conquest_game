@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://21ss7mk21xlr"]
+
+[ext_resource type="Texture2D" uid="uid://ff20haynnfku" path="res://assets/textures/planet_placeholder.jpg" id="1_1qkrs"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ea544"]
+radius = 30.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hxwo"]
+albedo_texture = ExtResource("1_1qkrs")
+
+[sub_resource type="SphereMesh" id="SphereMesh_j5tim"]
+material = SubResource("StandardMaterial3D_7hxwo")
+radius = 30.0
+height = 60.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5egqv"]
+radius = 50.0
+
+[node name="Planet" type="Node3D"]
+
+[node name="RigidBody3D" type="StaticBody3D" parent="."]
+disable_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_ea544")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_j5tim")
+skeleton = NodePath("")
+
+[node name="gravity_area" type="Area3D" parent="RigidBody3D"]
+gravity_space_override = 3
+gravity_point = true
+gravity_point_center = Vector3(0, 0, 0)
+gravity_direction = Vector3(0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/gravity_area"]
+shape = SubResource("SphereShape3D_5egqv")

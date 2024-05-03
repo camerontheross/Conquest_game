@@ -21,13 +21,17 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
+	#looking around with mouse input
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(75))
 
 func _physics_process(delta):
-	# Add the gravity.
+	#temp fix for menu
+	if Input.is_action_pressed("ui_menu"):
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	
 	#change this later
 	#player should be pulled towards planets rather than
 	#an arbitrary "down"
