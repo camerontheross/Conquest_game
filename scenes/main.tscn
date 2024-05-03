@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://7l70iu1qixl"]
+[gd_scene load_steps=9 format=3 uid="uid://7l70iu1qixl"]
 
-[ext_resource type="PackedScene" uid="uid://dht668nqglvrp" path="res://scenes/player.tscn" id="1_trees"]
-[ext_resource type="PackedScene" uid="uid://21ss7mk21xlr" path="res://scenes/planet.tscn" id="2_1nvsr"]
+[ext_resource type="PackedScene" path="res://scenes/planet.tscn" id="2_1nvsr"]
+[ext_resource type="PackedScene" uid="uid://2ri27u20r1rm" path="res://scenes/player_revised.tscn" id="2_8gs2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0tdp"]
 size = Vector3(100, 1, 100)
@@ -22,10 +22,6 @@ albedo_color = Color(0.184314, 1, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_k3m7k"]
 material = SubResource("StandardMaterial3D_d7epx")
 size = Vector3(10, 5, 10)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_cyk15"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_xuu85"]
 
 [node name="Main" type="Node"]
 
@@ -58,15 +54,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 81)
 [node name="Planet2" parent="." instance=ExtResource("2_1nvsr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.3521)
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-mass = 3.05
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27, 50)
-shape = SubResource("SphereShape3D_cyk15")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D/CollisionShape3D"]
-mesh = SubResource("SphereMesh_xuu85")
-
-[node name="Player" parent="." instance=ExtResource("1_trees")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.7037, 71.1223)
+[node name="Player" parent="." instance=ExtResource("2_8gs2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.7912, 54.9934)

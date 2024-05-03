@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://db23eu0g3woxu"]
+[gd_scene load_steps=6 format=3 uid="uid://2ri27u20r1rm"]
 
 [ext_resource type="Script" path="res://scripts/Player_revised.gd" id="1_tnwtj"]
 [ext_resource type="PackedScene" uid="uid://dp1yyiynvu85s" path="res://assets/textures/interdynamic_mp9__tec-9.glb" id="2_rleyu"]
@@ -16,7 +16,6 @@ mass = 10.61
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_tnwtj")
-rotation_speed = null
 
 [node name="Head" type="Node3D" parent="."]
 
