@@ -14,11 +14,6 @@ var t_bob = 0.0
 var speed = WALK_SPEED
 var base_FOV = 75.0
 
-var _move_dir = Vector3.ZERO
-var _last_strong_dir = Vector3.FORWARD
-var local_grav = Vector3.DOWN
-var _should_reset = false
-
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var _start_pos = global_transform.origin
@@ -34,6 +29,7 @@ func _unhandled_input(event):
 
 func _physics_process(delta):
 	
+	#open menu (temp)
 	if Input.is_action_pressed("ui_menu"):
 		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 

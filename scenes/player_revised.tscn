@@ -36,3 +36,6 @@ shape = SubResource("CapsuleShape3D_ctvc2")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_7oa4o")
 skeleton = NodePath("../Head")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+collide_with_areas = true
