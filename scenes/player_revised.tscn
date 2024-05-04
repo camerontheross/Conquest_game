@@ -4,20 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://dp1yyiynvu85s" path="res://assets/textures/interdynamic_mp9__tec-9.glb" id="2_rleyu"]
 [ext_resource type="Texture2D" uid="uid://dajbavd45r0im" path="res://assets/textures/crosshair.png" id="3_7ddoy"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ctvc2"]
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7oa4o"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ctvc2"]
 
 [node name="Player" type="RigidBody3D"]
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 mass = 10.61
-max_contacts_reported = 1
+max_contacts_reported = 4
 contact_monitor = true
 script = ExtResource("1_tnwtj")
 
 [node name="Head" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
+mesh = SubResource("CapsuleMesh_7oa4o")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.536935, 0.0115802)
@@ -32,10 +35,3 @@ texture = ExtResource("3_7ddoy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ctvc2")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_7oa4o")
-skeleton = NodePath("../Head")
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-collide_with_areas = true

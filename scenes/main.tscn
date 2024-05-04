@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://7l70iu1qixl"]
 
-[ext_resource type="PackedScene" path="res://scenes/planet.tscn" id="2_1nvsr"]
+[ext_resource type="PackedScene" uid="uid://21ss7mk21xlr" path="res://scenes/planet.tscn" id="2_1nvsr"]
 [ext_resource type="PackedScene" uid="uid://2ri27u20r1rm" path="res://scenes/player_revised.tscn" id="2_8gs2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0tdp"]
@@ -55,4 +55,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 81)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.3521)
 
 [node name="Player" parent="." instance=ExtResource("2_8gs2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -39.7723, -5.43567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.1463, 81.661)

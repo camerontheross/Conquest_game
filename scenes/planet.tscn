@@ -33,6 +33,7 @@ gravity_space_override = 3
 gravity_point = true
 gravity_point_center = Vector3(0, 0, 0)
 gravity_direction = Vector3(0, 0, 0)
+gravity = 8.159
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/gravity_area"]
 shape = SubResource("SphereShape3D_5egqv")
